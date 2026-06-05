@@ -1,0 +1,846 @@
+{
+	"info": {
+		"_postman_id": "eb341da4-2e61-4b69-80cd-af39dd9c2782",
+		"name": "AmantyDigitalKraSystem",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16970330"
+	},
+	"item": [
+		{
+			"name": "sign-up",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"divya\",\n    \"lastname\":\"gupta\",\n    \"email\":\"test@gmail.com\",\n    \"password\":\"1234\",\n    \"role\":\"1\",\n    \"phonenumber\":\"9910382013\"\n    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/auth/sign-up",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"sign-up"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"email\":\"test@gmail.com\",\n    \"password\":\"1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkaXZhZ3VwdGFAYW1hbnR5YS5jb20iLCJpYXQiOjE3MTg0MzgwOTYsImV4cCI6MTcxODQ0MTY5Nn0.YjzUf4FM4p8gMJIqkgHSFd2Aj8xx_LFEE15pC2SnPdU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchUserByName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users/fetchUserByEmail/test@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"fetchUserByEmail",
+						"test@gmail.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateUser",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"divya\",\n    \"lastname\":\"gupta\",\n    \"email\":\"test@gmail.com\",\n    \"password\":\"1234\",\n    \"role\":\"1\",\n    \"phonenumber\":\"1234567890\",\n    \"isActive\":true\n    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getuserbyId",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "reset or forgot password",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/auth/resetpas?email=test@gmail.com&newPassword=123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"resetpas"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "test@gmail.com"
+						},
+						{
+							"key": "newPassword",
+							"value": "123"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete users by ids",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[2]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get count of users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[2]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users/count",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"count"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get count of users by role",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/users/count/manager",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"count",
+						"manager"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save kra form",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \"userId\":1,\n    \"kraType\": \"Annual Review\",\n    \"overallWeightage\": 100,\n    \"status\": \"draft\",\n    \"categories\": [\n        {\n            \"kraName\": \"Technical Skills\",\n            \"overallWeightage\": 50,\n            \"detailedKra\": \"Improve Java skills\",\n            \"fields\": [\n                {\n                    \"weightage\": 30,\n                    \"measureOfSuccess\": \"Complete Java certification\",\n                    \"individualProgressTrackingIndicators\": \"Score above 85%\"\n                },\n                {\n                    \"weightage\": 20,\n                    \"measureOfSuccess\": \"Implement new features\",\n                    \"individualProgressTrackingIndicators\": \"Successful deployment\"\n                }\n            ]\n        },\n        {\n            \"kraName\": \"Soft Skills\",\n            \"overallWeightage\": 50,\n            \"detailedKra\": \"Enhance communication\",\n            \"fields\": [\n                {\n                    \"weightage\": 50,\n                    \"measureOfSuccess\": \"Attend workshops\",\n                    \"individualProgressTrackingIndicators\": \"Participation in all sessions\"\n                }\n            ]\n        }\n    ]\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/kra/form",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"kra",
+						"form"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get kra form",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \"userId\":1,\n    \"kraType\": \"Annual Review\",\n    \"overallWeightage\": 100,\n    \"status\": \"draft\",\n    \"categories\": [\n        {\n            \"kraName\": \"Technical Skills\",\n            \"overallWeightage\": 50,\n            \"detailedKra\": \"Improve Java skills\",\n            \"fields\": [\n                {\n                    \"weightage\": 30,\n                    \"measureOfSuccess\": \"Complete Java certification\",\n                    \"individualProgressTrackingIndicators\": \"Score above 85%\"\n                },\n                {\n                    \"weightage\": 20,\n                    \"measureOfSuccess\": \"Implement new features\",\n                    \"individualProgressTrackingIndicators\": \"Successful deployment\"\n                }\n            ]\n        },\n        {\n            \"kraName\": \"Soft Skills\",\n            \"overallWeightage\": 50,\n            \"detailedKra\": \"Enhance communication\",\n            \"fields\": [\n                {\n                    \"weightage\": 50,\n                    \"measureOfSuccess\": \"Attend workshops\",\n                    \"individualProgressTrackingIndicators\": \"Participation in all sessions\"\n                }\n            ]\n        }\n    ]\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/kra/form/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"kra",
+						"form",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update kra form",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \"userId\":1,\n    \"kraType\": \"Annual Review\",\n    \"overallWeightage\": 100,\n    \"status\": \"draft\",\n    \"categories\": [\n        {\n            \"kraName\": \"Technical Skills\",\n            \"overallWeightage\": 50,\n            \"detailedKra\": \"Improve Java skills\",\n            \"fields\": [\n                {\n                    \"weightage\": 30,\n                    \"measureOfSuccess\": \"Complete Java certification\",\n                    \"individualProgressTrackingIndicators\": \"Score above 85%\"\n                },\n                {\n                    \"weightage\": 20,\n                    \"measureOfSuccess\": \"Implement new features\",\n                    \"individualProgressTrackingIndicators\": \"Successful deployment\"\n                }\n            ]\n        },\n        {\n            \"kraName\": \"Soft Skills\",\n            \"overallWeightage\": 50,\n            \"detailedKra\": \"Enhance communication\",\n            \"fields\": [\n                {\n                    \"weightage\": 50,\n                    \"measureOfSuccess\": \"Attend workshops\",\n                    \"individualProgressTrackingIndicators\": \"Participation in all sessions\"\n                }\n            ]\n        }\n    ]\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/kra/form/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"kra",
+						"form",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "submit kra form",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \"userId\":1,\n    // \"userEmail\": \"user@example.com\",\n    \"kraType\": \"Business / Technology Management\",\n    \"overallWeightage\": 50,\n    \"status\": \"Draft\",\n    \"categories\": [\n        {\n            \"kraName\": \"Team Management\",\n            \"overallWeightage\": 20,\n            \"detailedKra\": \"Ownership/Quality and Customer Focus/Leadership/Initiatives\",\n            \"fields\": [\n                {\n                    \"weightage\": 20,\n                    \"measureOfSuccess\": \"Should be reachable and able to do effective communication with Client and within the Team\",\n                    \"individualProgressTrackingIndicators\": \"How accessible are you to the team? Ability to effective and efficient team engagement, drive team motivation and growth. Enable the team to achieve a common goal going beyond the individual responsibilities and skill constraints. Please mention instances.\"\n                },\n                {\n                    \"weightage\": 15,\n                    \"measureOfSuccess\": \"Should be independently work and handle assigned task\",\n                    \"individualProgressTrackingIndicators\": \"Owning up the assigned work responsibilities and performing with minimum or no supervision. Communicating status, conveying information in the team are crucial. Coming up with alternative and better design suggestions, new ways of solving a problem and meeting the timelines are few traits that define the sense of ownership.\"\n                },\n                {\n                    \"weightage\": 10,\n                    \"measureOfSuccess\": \"Good understanding of latest design approach\",\n                    \"individualProgressTrackingIndicators\": \"Quality is by design and practice. Mention few instances where you paid enough attention to quality and enhanced customer experience. All actions whether small or large should be customer focused. Mention few instances where you thought from customer’s point of view and ultimately helped improve the product quality.\"\n                },\n                {\n                    \"weightage\": 10,\n                    \"measureOfSuccess\": \"Take initiatives as per organization needs\",\n                    \"individualProgressTrackingIndicators\": \"The ability to analyze work, set goals, develop plans of action, utilize time. Consider amount of supervision required and extent to which you can trust employee to carry out assignments conscientiously.\"\n                }\n            ]\n        },\n        {\n            \"kraName\": \"Client Management\",\n            \"overallWeightage\": 10,\n            \"detailedKra\": \"Communication\",\n            \"fields\": [\n                {\n                    \"weightage\": 10,\n                    \"measureOfSuccess\": \"Should be reachable and able to do effective communication with Client and within the Team\",\n                    \"individualProgressTrackingIndicators\": \"The ability to analyze work, set goals, develop plans of action, utilize time. Consider amount of supervision required and extent to which you can trust employee to carry out assignments conscientiously.\"\n                }\n            ]\n        },\n        {\n            \"kraName\": \"Org and Financial\",\n            \"overallWeightage\": 10,\n            \"detailedKra\": \"Planning and organizing\",\n            \"fields\": [\n                {\n                    \"weightage\": 10,\n                    \"measureOfSuccess\": \"Should be independently work and handle assigned task\",\n                    \"individualProgressTrackingIndicators\": \"Contribute in documentation of the technical case studies for future usage and reference, use them in grooming and mentoring the junior folks as required.\"\n                }\n            ]\n        },\n        {\n            \"kraName\": \"Self\",\n            \"overallWeightage\": 10,\n            \"detailedKra\": \"Upskills one self in line with career goals\",\n            \"fields\": [\n                {\n                    \"weightage\": 10,\n                    \"measureOfSuccess\": \"Should be independently work and handle assigned task\",\n                    \"individualProgressTrackingIndicators\": \"Contribute in documentation of the technical case studies for future usage and reference, use them in grooming and mentoring the junior folks as required.\"\n                }\n            ]\n        }\n    ]\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/kra/form/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"kra",
+						"form",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "approve kra form",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \"userId\":1,\n    // \"userEmail\": \"user@example.com\",\n    \"kraType\": \"Business / Technology Management\",\n    \"overallWeightage\": 50,\n    \"status\": \"Draft\",\n    \"categories\": [\n        {\n            \"kraName\": \"Team Management\",\n            \"overallWeightage\": 20,\n            \"detailedKra\": \"Ownership/Quality and Customer Focus/Leadership/Initiatives\",\n            \"fields\": [\n                {\n                    \"weightage\": 20,\n                    \"measureOfSuccess\": \"Should be reachable and able to do effective communication with Client and within the Team\",\n                    \"individualProgressTrackingIndicators\": \"How accessible are you to the team? Ability to effective and efficient team engagement, drive team motivation and growth. Enable the team to achieve a common goal going beyond the individual responsibilities and skill constraints. Please mention instances.\"\n                },\n                {\n                    \"weightage\": 15,\n                    \"measureOfSuccess\": \"Should be independently work and handle assigned task\",\n                    \"individualProgressTrackingIndicators\": \"Owning up the assigned work responsibilities and performing with minimum or no supervision. Communicating status, conveying information in the team are crucial. Coming up with alternative and better design suggestions, new ways of solving a problem and meeting the timelines are few traits that define the sense of ownership.\"\n                },\n                {\n                    \"weightage\": 10,\n                    \"measureOfSuccess\": \"Good understanding of latest design approach\",\n                    \"individualProgressTrackingIndicators\": \"Quality is by design and practice. Mention few instances where you paid enough attention to quality and enhanced customer experience. All actions whether small or large should be customer focused. Mention few instances where you thought from customer’s point of view and ultimately helped improve the product quality.\"\n                },\n                {\n                    \"weightage\": 10,\n                    \"measureOfSuccess\": \"Take initiatives as per organization needs\",\n                    \"individualProgressTrackingIndicators\": \"The ability to analyze work, set goals, develop plans of action, utilize time. Consider amount of supervision required and extent to which you can trust employee to carry out assignments conscientiously.\"\n                }\n            ]\n        },\n        {\n            \"kraName\": \"Client Management\",\n            \"overallWeightage\": 10,\n            \"detailedKra\": \"Communication\",\n            \"fields\": [\n                {\n                    \"weightage\": 10,\n                    \"measureOfSuccess\": \"Should be reachable and able to do effective communication with Client and within the Team\",\n                    \"individualProgressTrackingIndicators\": \"The ability to analyze work, set goals, develop plans of action, utilize time. Consider amount of supervision required and extent to which you can trust employee to carry out assignments conscientiously.\"\n                }\n            ]\n        },\n        {\n            \"kraName\": \"Org and Financial\",\n            \"overallWeightage\": 10,\n            \"detailedKra\": \"Planning and organizing\",\n            \"fields\": [\n                {\n                    \"weightage\": 10,\n                    \"measureOfSuccess\": \"Should be independently work and handle assigned task\",\n                    \"individualProgressTrackingIndicators\": \"Contribute in documentation of the technical case studies for future usage and reference, use them in grooming and mentoring the junior folks as required.\"\n                }\n            ]\n        },\n        {\n            \"kraName\": \"Self\",\n            \"overallWeightage\": 10,\n            \"detailedKra\": \"Upskills one self in line with career goals\",\n            \"fields\": [\n                {\n                    \"weightage\": 10,\n                    \"measureOfSuccess\": \"Should be independently work and handle assigned task\",\n                    \"individualProgressTrackingIndicators\": \"Contribute in documentation of the technical case studies for future usage and reference, use them in grooming and mentoring the junior folks as required.\"\n                }\n            ]\n        }\n    ]\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/kra/form/1/approve",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"kra",
+						"form",
+						"1",
+						"approve"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reject kra form",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \"userId\":1,\n    // \"userEmail\": \"user@example.com\",\n    \"kraType\": \"Business / Technology Management\",\n    \"overallWeightage\": 50,\n    \"status\": \"Draft\",\n    \"categories\": [\n        {\n            \"kraName\": \"Team Management\",\n            \"overallWeightage\": 20,\n            \"detailedKra\": \"Ownership/Quality and Customer Focus/Leadership/Initiatives\",\n            \"fields\": [\n                {\n                    \"weightage\": 20,\n                    \"measureOfSuccess\": \"Should be reachable and able to do effective communication with Client and within the Team\",\n                    \"individualProgressTrackingIndicators\": \"How accessible are you to the team? Ability to effective and efficient team engagement, drive team motivation and growth. Enable the team to achieve a common goal going beyond the individual responsibilities and skill constraints. Please mention instances.\"\n                },\n                {\n                    \"weightage\": 15,\n                    \"measureOfSuccess\": \"Should be independently work and handle assigned task\",\n                    \"individualProgressTrackingIndicators\": \"Owning up the assigned work responsibilities and performing with minimum or no supervision. Communicating status, conveying information in the team are crucial. Coming up with alternative and better design suggestions, new ways of solving a problem and meeting the timelines are few traits that define the sense of ownership.\"\n                },\n                {\n                    \"weightage\": 10,\n                    \"measureOfSuccess\": \"Good understanding of latest design approach\",\n                    \"individualProgressTrackingIndicators\": \"Quality is by design and practice. Mention few instances where you paid enough attention to quality and enhanced customer experience. All actions whether small or large should be customer focused. Mention few instances where you thought from customer’s point of view and ultimately helped improve the product quality.\"\n                },\n                {\n                    \"weightage\": 10,\n                    \"measureOfSuccess\": \"Take initiatives as per organization needs\",\n                    \"individualProgressTrackingIndicators\": \"The ability to analyze work, set goals, develop plans of action, utilize time. Consider amount of supervision required and extent to which you can trust employee to carry out assignments conscientiously.\"\n                }\n            ]\n        },\n        {\n            \"kraName\": \"Client Management\",\n            \"overallWeightage\": 10,\n            \"detailedKra\": \"Communication\",\n            \"fields\": [\n                {\n                    \"weightage\": 10,\n                    \"measureOfSuccess\": \"Should be reachable and able to do effective communication with Client and within the Team\",\n                    \"individualProgressTrackingIndicators\": \"The ability to analyze work, set goals, develop plans of action, utilize time. Consider amount of supervision required and extent to which you can trust employee to carry out assignments conscientiously.\"\n                }\n            ]\n        },\n        {\n            \"kraName\": \"Org and Financial\",\n            \"overallWeightage\": 10,\n            \"detailedKra\": \"Planning and organizing\",\n            \"fields\": [\n                {\n                    \"weightage\": 10,\n                    \"measureOfSuccess\": \"Should be independently work and handle assigned task\",\n                    \"individualProgressTrackingIndicators\": \"Contribute in documentation of the technical case studies for future usage and reference, use them in grooming and mentoring the junior folks as required.\"\n                }\n            ]\n        },\n        {\n            \"kraName\": \"Self\",\n            \"overallWeightage\": 10,\n            \"detailedKra\": \"Upskills one self in line with career goals\",\n            \"fields\": [\n                {\n                    \"weightage\": 10,\n                    \"measureOfSuccess\": \"Should be independently work and handle assigned task\",\n                    \"individualProgressTrackingIndicators\": \"Contribute in documentation of the technical case studies for future usage and reference, use them in grooming and mentoring the junior folks as required.\"\n                }\n            ]\n        }\n    ]\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/kra/form/1/approve",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"kra",
+						"form",
+						"1",
+						"approve"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pending kra form",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \"userId\":1,\n    // \"userEmail\": \"user@example.com\",\n    \"kraType\": \"Business / Technology Management\",\n    \"overallWeightage\": 50,\n    \"status\": \"Draft\",\n    \"categories\": [\n        {\n            \"kraName\": \"Team Management\",\n            \"overallWeightage\": 20,\n            \"detailedKra\": \"Ownership/Quality and Customer Focus/Leadership/Initiatives\",\n            \"fields\": [\n                {\n                    \"weightage\": 20,\n                    \"measureOfSuccess\": \"Should be reachable and able to do effective communication with Client and within the Team\",\n                    \"individualProgressTrackingIndicators\": \"How accessible are you to the team? Ability to effective and efficient team engagement, drive team motivation and growth. Enable the team to achieve a common goal going beyond the individual responsibilities and skill constraints. Please mention instances.\"\n                },\n                {\n                    \"weightage\": 15,\n                    \"measureOfSuccess\": \"Should be independently work and handle assigned task\",\n                    \"individualProgressTrackingIndicators\": \"Owning up the assigned work responsibilities and performing with minimum or no supervision. Communicating status, conveying information in the team are crucial. Coming up with alternative and better design suggestions, new ways of solving a problem and meeting the timelines are few traits that define the sense of ownership.\"\n                },\n                {\n                    \"weightage\": 10,\n                    \"measureOfSuccess\": \"Good understanding of latest design approach\",\n                    \"individualProgressTrackingIndicators\": \"Quality is by design and practice. Mention few instances where you paid enough attention to quality and enhanced customer experience. All actions whether small or large should be customer focused. Mention few instances where you thought from customer’s point of view and ultimately helped improve the product quality.\"\n                },\n                {\n                    \"weightage\": 10,\n                    \"measureOfSuccess\": \"Take initiatives as per organization needs\",\n                    \"individualProgressTrackingIndicators\": \"The ability to analyze work, set goals, develop plans of action, utilize time. Consider amount of supervision required and extent to which you can trust employee to carry out assignments conscientiously.\"\n                }\n            ]\n        },\n        {\n            \"kraName\": \"Client Management\",\n            \"overallWeightage\": 10,\n            \"detailedKra\": \"Communication\",\n            \"fields\": [\n                {\n                    \"weightage\": 10,\n                    \"measureOfSuccess\": \"Should be reachable and able to do effective communication with Client and within the Team\",\n                    \"individualProgressTrackingIndicators\": \"The ability to analyze work, set goals, develop plans of action, utilize time. Consider amount of supervision required and extent to which you can trust employee to carry out assignments conscientiously.\"\n                }\n            ]\n        },\n        {\n            \"kraName\": \"Org and Financial\",\n            \"overallWeightage\": 10,\n            \"detailedKra\": \"Planning and organizing\",\n            \"fields\": [\n                {\n                    \"weightage\": 10,\n                    \"measureOfSuccess\": \"Should be independently work and handle assigned task\",\n                    \"individualProgressTrackingIndicators\": \"Contribute in documentation of the technical case studies for future usage and reference, use them in grooming and mentoring the junior folks as required.\"\n                }\n            ]\n        },\n        {\n            \"kraName\": \"Self\",\n            \"overallWeightage\": 10,\n            \"detailedKra\": \"Upskills one self in line with career goals\",\n            \"fields\": [\n                {\n                    \"weightage\": 10,\n                    \"measureOfSuccess\": \"Should be independently work and handle assigned task\",\n                    \"individualProgressTrackingIndicators\": \"Contribute in documentation of the technical case studies for future usage and reference, use them in grooming and mentoring the junior folks as required.\"\n                }\n            ]\n        }\n    ]\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/kra/form/1/approve",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"kra",
+						"form",
+						"1",
+						"approve"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "upload kra form",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/path/to/your/file.xlsx"
+						},
+						{
+							"key": "",
+							"type": "file",
+							"src": [],
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/kra/form/upload?userId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"kra",
+						"form",
+						"upload"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update kra form upload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/path/to/your/file.xlsx"
+						},
+						{
+							"key": "",
+							"type": "file",
+							"src": [],
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/kra/form/upload?userId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"kra",
+						"form",
+						"upload"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "download kra form",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/path/to/your/file.xlsx"
+						},
+						{
+							"key": "",
+							"type": "file",
+							"src": [],
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/kra/form/upload?userId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"kra",
+						"form",
+						"upload"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sendKraFormEmail",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "kraFormId",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "toEmail",
+							"value": "kudi.divya@gmail.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/kra/form/sendKraFormEmail",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"kra",
+						"form",
+						"sendKraFormEmail"
+					],
+					"query": [
+						{
+							"key": "kraFormId",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "toEmail",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sendApiExample",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "kraFormId",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "toEmail",
+							"value": "kudi.divya@gmail.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/kra/form/sendKraFormEmail",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"kra",
+						"form",
+						"sendKraFormEmail"
+					],
+					"query": [
+						{
+							"key": "kraFormId",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "toEmail",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Managers comment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"managersComment\": \"This is the manager's comment.\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/kra/form/comment/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"kra",
+						"form",
+						"comment",
+						"1"
+					],
+					"query": [
+						{
+							"key": "kraFormId",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "toEmail",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkaXZhLmd1cHRhQGFtYW50eWF0ZWNoLmNvbSIsImlhdCI6MTcyMDUwMzg2OCwiZXhwIjoxNzIwNTkwMjY4fQ.9a_viHGSn-JqJC8ON7anBndossTuco5vUvlZeZerFk4",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
